@@ -1,0 +1,70 @@
+unit ProvaDelphiApp.ExecuteContador;
+
+interface
+
+uses
+  ProvaDelphiApp.Interfaces,
+  Vcl.ComCtrls,
+  System.Threading;
+
+type
+  TExecuteContador = class(TInterfacedObject, iExecuteContador)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iExecuteContador;
+    function SetProgressBar (AValue : TProgressBar) : iExecuteContador;
+    function SetTask (AValue : iTask) : iExecuteContador;
+    function SetInterval (AValue : integer) : iExecuteContador;
+    function SetLoops (AValue : integer) : iExecuteContador;
+    function Execute : iExecuteContador;
+  end;
+
+implementation
+
+{ TExecuteContador }
+
+constructor TExecuteContador.Create;
+begin
+
+end;
+
+destructor TExecuteContador.Destroy;
+begin
+
+  inherited;
+end;
+
+function TExecuteContador.Execute: iExecuteContador;
+begin
+
+end;
+
+class function TExecuteContador.New: iExecuteContador;
+begin
+  Result := Self.Create;
+end;
+
+function TExecuteContador.SetInterval(AValue: integer): iExecuteContador;
+begin
+
+end;
+
+function TExecuteContador.SetLoops(AValue: integer): iExecuteContador;
+begin
+
+end;
+
+function TExecuteContador.SetProgressBar(
+  AValue: TProgressBar): iExecuteContador;
+begin
+
+end;
+
+function TExecuteContador.SetTask(AValue: iTask): iExecuteContador;
+begin
+
+end;
+
+end.

@@ -1,0 +1,13 @@
+unit ProvaDelphiApp.Contador.Interfaces;
+
+interface
+
+type
+  iContador = interface
+    ['{E0C58358-3A26-4A48-B9DF-20121E0A3453}']
+
+  end;
+
+implementation
+
+end.

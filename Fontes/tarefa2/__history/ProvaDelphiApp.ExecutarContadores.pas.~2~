@@ -1,0 +1,43 @@
+unit ProvaDelphiApp.ExecutarContadores;
+
+interface
+
+uses
+  ProvaDelphiApp.Tarefa2.Interfaces,
+  Vcl.ComCtrls,
+  System.Classes,
+  System.SysUtils,
+  System.Generics.Collections,
+  ProvaDelphiApp.Contador;
+
+type
+  TExecutarContadores = class(TInterfacedObject, iExecutarContadores)
+  private
+    FListaContadores : TList<TContador>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iExecutarContadores;
+  end;
+
+implementation
+
+{ TExecutarContadores }
+
+constructor TExecutarContadores.Create;
+begin
+
+end;
+
+destructor TExecutarContadores.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TExecutarContadores.New: iExecutarContadores;
+begin
+  Result := Self.Create;
+end;
+
+end.

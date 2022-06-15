@@ -1,0 +1,65 @@
+﻿unit TestesProvaDelphi;
+
+interface
+
+uses
+  DUnitX.TestFramework,
+  ProvaDelphiApp.Tarefa1.Interfaces,
+  SysUtils;
+
+type
+  [TestFixture]
+  TTestesProvaDelphi = class
+  SQLGenerator : iSQLGenerator;
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+    [Test]
+    procedure TestaGeracaoSQL;
+  end;
+
+implementation
+
+uses
+  ProvaDelphiApp.Tarefa1, System.Classes;
+
+procedure TTestesProvaDelphi.Setup;
+begin
+  SQLGenerator := TSQLGenerator.New;
+end;
+
+procedure TTestesProvaDelphi.TearDown;
+begin
+end;
+
+procedure TTestesProvaDelphi.TestaGeracaoSQL;
+var
+  SQLCorreto : TStrings;
+begin
+  SQLCorreto := TStringList.Create;
+  try
+    SQLCorreto.Add('SELECT CLI_NOME');
+    SQLCorreto.Add('FROM cliente');
+    SQLCorreto.Add('WHERE CLI_NOME = "RODRIGO"');
+
+    SQLGenerator.AddColuna('CLI_NOME');
+    SQLGenerator.AddTabela('cliente');
+    SQLGenerator.AddCondicao('CLI_NOME = "RODRIGO"');
+
+    Assert.AreEqual(
+      SQLGenerator.GetSQL.Trim ,
+      SQLCorreto.Text.Trim,
+      'A geração de SQL não ocorreu como previsto'
+    );
+  finally
+    FreeAndNil(SQLCorreto);
+  end;
+
+end;
+
+initialization
+  TDUnitX.RegisterTestFixture(TTestesProvaDelphi);
+
+end.

@@ -1,0 +1,84 @@
+unit ProvaDelphiApp.ThreadContador;
+
+interface
+
+uses VCL.ComCtrls, System.threading, System.SysUtils,
+  Classes, Controls, StdCtrls, Forms;
+
+type
+ TThreadContador = class(TThread)
+ private
+   FProgressBar: TProgressBar;
+   FPrioridade: TThreadPriority;
+   FQuantidadeLoops: Integer;
+   FIntervalo: Integer;
+   procedure SetIntervalo(const Value: Integer);
+   procedure SetQuantidadeLoops(const Value: Integer);
+    procedure SetProgressBar(const Value: TProgressBar);
+    function GetProgressBar: TProgressBar;
+ public
+   constructor Create;
+   property ProgressBar: TProgressBar read GetProgressBar write SetProgressBar;
+   property Prioridade: TThreadPriority read FPrioridade write FPrioridade;
+   property Intervalo : Integer read FIntervalo write SetIntervalo;
+   property QuantidadeLoops :Integer read FQuantidadeLoops write SetQuantidadeLoops;
+ protected
+   procedure Execute; override;
+ end;
+
+implementation
+
+{ TThreadProgresso }
+
+constructor TThreadContador.Create;
+begin
+  inherited;
+  Intervalo       := 1000;
+  QuantidadeLoops := 100;
+  FreeOnTerminate := true;
+  Prioridade      := tpNormal;
+end;
+
+procedure TThreadContador.Execute;
+var
+ I: Integer;
+begin
+  if Assigned(FProgressBar) then
+  begin
+    FProgressBar.Max := QuantidadeLoops;
+    FProgressBar.Position := 0;
+  end;
+  for I := 0 to QuantidadeLoops -1 do
+  begin
+    if Assigned(FProgressBar) then
+      FProgressBar.StepBy(1);
+    Sleep(Intervalo);
+  end;
+  Application.ProcessMessages;
+  Self.Terminate;
+  inherited;
+end;
+
+function TThreadContador.GetProgressBar: TProgressBar;
+begin
+  if not Assigned(FProgressBar) then
+    raise Exception.Create('Nenhum ProgressBar definido');
+  Result := FProgressBar;
+end;
+
+procedure TThreadContador.SetIntervalo(const Value: Integer);
+begin
+  FIntervalo := Value;
+end;
+
+procedure TThreadContador.SetProgressBar(const Value: TProgressBar);
+begin
+  FProgressBar := Value;
+end;
+
+procedure TThreadContador.SetQuantidadeLoops(const Value: Integer);
+begin
+  FQuantidadeLoops := Value;
+end;
+
+end.

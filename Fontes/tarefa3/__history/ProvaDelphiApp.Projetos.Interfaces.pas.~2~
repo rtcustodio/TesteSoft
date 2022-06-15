@@ -1,0 +1,13 @@
+unit ProvaDelphiApp.Projetos.Interfaces;
+
+interface
+
+type
+  iProjetos = interface
+    ['{624DAC1E-5877-4C2C-84B6-C08BC2A80133}']
+
+  end;
+
+implementation
+
+end.

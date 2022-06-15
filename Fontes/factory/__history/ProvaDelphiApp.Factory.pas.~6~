@@ -1,0 +1,55 @@
+unit ProvaDelphiApp.Factory;
+
+interface
+
+uses
+  ProvaDelphiApp.Factory.Interfaces,
+  ProvaDelphiApp.Tarefa1.Interfaces,
+  ProvaDelphiApp.Interfaces;
+
+type
+  TFactory = class(TInterfacedObject, iFactory)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iFactory;
+    function GeraSQL : iGeraSQL;
+    function ExecutaContador : iExecutaContador;
+  end;
+
+implementation
+
+uses
+  ProvaDelphiApp.Tarefa1,
+  ProvaDelphiApp.ExecutaContador;
+
+{ TFactory }
+
+constructor TFactory.Create;
+begin
+
+end;
+
+destructor TFactory.Destroy;
+begin
+
+  inherited;
+end;
+
+function TFactory.ExecutaContador: iExecutaContador;
+begin
+  Result := TExecutaContador.New;
+end;
+
+function TFactory.GeraSQL: iGeraSQL;
+begin
+  Result := TGeraSQL.New;
+end;
+
+class function TFactory.New: iFactory;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/03/12 16:19:11.000.054,=rtl.dcp</Transaction>
+    <Transaction>2021/03/12 16:19:30.000.537,C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\Package1.dproj=C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\spComponentes.dproj</Transaction>
+    <Transaction>2021/03/12 16:20:02.000.658,C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\spComponentes.dproj=C:\Projetos\TesteDelphiApp\spComponentes.dproj</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.661,=FireDACCommon.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.571,=dbrtl.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.614,=FireDACSqliteDriver.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.685,=xmlrtl.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.639,=FireDACCommonDriver.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.592,=FireDAC.dcp</Transaction>
+    <Transaction>2021/03/12 16:21:50.000.504,=C:\Projetos\TesteDelphiApp\uspComponentesRegistro.pas</Transaction>
+    <Transaction>2021/03/12 17:33:16.000.092,C:\Projetos\TesteDelphiApp\uspQuery.pas=C:\Projetos\TesteDelphiApp\uspComponentesRegistro.pas</Transaction>
+    <Transaction>2021/03/12 17:42:54.000.482,=FireDAC.dcp</Transaction>
+    <Transaction>2021/03/12 17:42:54.000.463,=dbrtl.dcp</Transaction>
+    <Transaction>2021/03/12 17:42:54.000.503,=FireDACCommonDriver.dcp</Transaction>
+    <Transaction>2021/03/12 17:42:54.000.443,=rtl.dcp</Transaction>
+    <Transaction>2021/03/12 17:42:54.000.521,=FireDACCommon.dcp</Transaction>
+    <Transaction>2021/03/14 10:47:46.000.966,=\\192.168.0.131\c$\Projetos\TesteDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2021/03/14 10:50:36.000.761,\\192.168.0.131\c$\Projetos\TesteDelphiApp\uspClasses.ClientDataSetUtils.pas=\\192.168.0.131\c$\Projetos\TesteDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2021/03/14 10:51:11.000.664,\\192.168.0.131\c$\Projetos\TesteDelphiApp\uspClasses.ClientDataSetUtils.pas=</Transaction>
+    <Transaction>2021/03/14 20:44:53.000.509,C:\TesteDelphiApp\uspQuery.pas=C:\TesteDelphiApp\Fontes\uspQuery.pas</Transaction>
+    <Transaction>2021/08/23 14:31:30.000.989,=FireDACCommonODBC.dcp</Transaction>
+    <Transaction>2021/08/23 14:31:30.000.993,=FireDACTDataDriver.dcp</Transaction>
+    <Transaction>2021/08/24 18:54:02.000.915,C:\TesteDelphi\TesteDelphi\Fontes\componente\uspQuery.pas=C:\TesteDelphi\TesteDelphi\Fontes\uspQuery.pas</Transaction>
+    <Transaction>2021/08/24 18:58:29.000.381,=C:\TesteDelphi\TesteDelphi\Unit1.pas</Transaction>
+    <Transaction>2021/08/24 19:03:58.000.176,C:\TesteDelphi\TesteDelphi\Fontes\factory\ProvaDelphiApp.Factory.Interfaces.pas=C:\TesteDelphi\TesteDelphi\Unit1.pas</Transaction>
+    <Transaction>2021/08/24 19:08:55.000.561,C:\TesteDelphi\TesteDelphi\Fontes\factory\ProvaDelphiApp.Factory.Interfaces.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

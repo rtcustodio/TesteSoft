@@ -1,0 +1,24 @@
+unit ProvaDelphiApp.Tarefa2.Interfaces;
+
+interface
+
+uses
+  VCL.ComCtrls;
+
+type
+  iExecutarContadores = interface;
+  iContador = interface
+    ['{65847BB7-5BFD-4517-A9C6-A71EEAAE35C5}']
+    function SetInterval(AValue : integer) : iContador;
+    function Execute : iContador;
+    function &End : iExecutarCOntadores;
+  end;
+  iExecutarContadores = interface
+    ['{F8BA49FE-D90A-402F-B38E-239DB8FDEF94}']
+    function AddContador : iContador;
+    function ExecuteAll : iExecutarContadores;
+  end;
+
+implementation
+
+end.

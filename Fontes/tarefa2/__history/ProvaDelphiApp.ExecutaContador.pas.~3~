@@ -1,0 +1,92 @@
+unit ProvaDelphiApp.ExecutaContador;
+
+interface
+
+uses
+  ProvaDelphiApp.Interfaces,
+  System.Threading,
+  System.Generics.Collections,
+  Vcl.ComCtrls;
+
+type
+  TExecutaContador = class(TInterfacedObject, iExecutaContador)
+  private
+    Tasks : array of ITask;
+    FFilaContador : TList<iParametrosContador>;
+    procedure RunTask (Progressbar: TProgressBar; var Task: ITask; Intervalo : Integer);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iExecutaContador;
+    function AddContador : iParametrosContador;
+    function ExecuteAll : iExecutaContador;
+  end;
+
+implementation
+
+uses
+  ProvaDelphiApp.Contador, Winapi.Windows, System.Classes, System.SysUtils;
+
+{ TExecutaContador }
+
+function TExecutaContador.AddContador: iParametrosContador;
+var
+  Contador : iParametrosContador;
+begin
+  Contador := TParametrosContador.New(Self);
+  FFilaContador.Add(Contador);
+  Result := Contador;
+end;
+
+constructor TExecutaContador.Create;
+begin
+  FFilaContador := TList<iParametrosContador>.Create;
+end;
+
+destructor TExecutaContador.Destroy;
+begin
+  FreeAndNil(FFilaContador);
+  inherited;
+end;
+
+function TExecutaContador.ExecuteAll: iExecutaContador;
+var
+  I : integer;
+begin
+  SetLength(Tasks, FFilaContador.Count);
+  for I := 0 to Pred(FFilaContador.Count) do
+  begin
+    RunTask(FFilaContador[I].GetProgressBar, Tasks[I], FFilaContador[I].GetIntervalo);
+  end;
+end;
+
+class function TExecutaContador.New: iExecutaContador;
+begin
+  Result := Self.Create;
+end;
+
+procedure TExecutaContador.RunTask(Progressbar: TProgressBar; var Task: ITask;
+  Intervalo: Integer);
+begin
+  ProgressBar.Position := 0;
+  ProgressBar.Max := 100;
+  ProgressBar.Step := 1;
+  Task := TTask.Run(
+    procedure
+    var
+      I: Integer;
+    begin
+      for I := 1 to 100 do
+      begin
+        Sleep(Intervalo);
+        TThread.Synchronize(TThread.CurrentThread,
+        procedure
+        begin
+          Progressbar.StepIt;
+        end);
+      end;
+    end
+  );
+end;
+
+end.

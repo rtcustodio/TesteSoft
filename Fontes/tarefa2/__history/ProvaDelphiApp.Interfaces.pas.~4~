@@ -1,0 +1,28 @@
+unit ProvaDelphiApp.Interfaces;
+
+interface
+
+uses
+  Vcl.ComCtrls;
+
+type
+  iParametrosContador = interface;
+
+  iContador = interface
+    ['{0D435885-F935-4ABD-9E65-80DBBB7DE782}']
+    function AddContador : iParametrosContador;
+    function ExecuteAll : iContador;
+  end;
+
+  iParametrosContador = interface
+    ['{281265FB-3E0D-42F3-8A3E-6716430025E2}']
+    function SetProgressBar (AValue : TProgressBar) : iParametrosContador;
+    function GetProgressBar : TProgressBar;
+    function SetIntervalo (AValue : integer) : iParametrosContador;
+    function GetIntervalo : integer;
+    function &End : iContador;
+  end;
+
+implementation
+
+end.

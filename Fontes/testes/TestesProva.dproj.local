@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/10/01 11:31:13.000.609,=C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2022/06/13 10:13:11.123,=C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2022/06/13 10:16:34.648,C:\TesteDelphi\TesteDelphi\Fontes\testes\TestesProvaDelphi.pas=C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2022/06/13 10:17:26.133,C:\TesteDelphi\TesteDelphi\Fontes\testes\TestesProva.dproj=C:\Users\rodrigo.UNIMEDRF\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>2022/06/13 10:17:49.392,=C:\TesteDelphi\TesteDelphi\Fontes\tarefa1\ProvaDelphiApp.Tarefa1.Interfaces.pas</Transaction>
+    <Transaction>2022/06/13 10:18:27.807,=C:\TesteDelphi\TesteDelphi\Fontes\tarefa1\ProvaDelphiApp.Tarefa1.pas</Transaction>
+    <Transaction>2022/06/13 10:18:46.230,=C:\TesteDelphi\TesteDelphi\Fontes\componente\uspQuery.pas</Transaction>
+    <Transaction>2022/06/13 17:33:05.126,=C:\TesteDelphi\TesteDelphi\Fontes\tarefa3\ProvaDelphiApp.Projeto.Entidade.pas</Transaction>
+    <Transaction>2022/06/13 17:34:57.032,=C:\TesteDelphi\TesteDelphi\Fontes\tarefa3\ProvaDelphiApp.Projetos.Interfaces.pas</Transaction>
+    <Transaction>2022/06/13 17:34:57.062,=C:\TesteDelphi\TesteDelphi\Fontes\tarefa3\ProvaDelphiApp.Projetos.pas</Transaction>
+  </Transactions>
+</BorlandProject>

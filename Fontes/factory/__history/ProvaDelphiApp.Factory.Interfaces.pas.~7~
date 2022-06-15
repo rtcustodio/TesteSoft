@@ -1,0 +1,24 @@
+unit ProvaDelphiApp.Factory.Interfaces;
+
+interface
+
+uses
+  ProvaDelphiApp.Tarefa1.Interfaces,
+  ProvaDelphiApp.Interfaces, ProvaDelphiApp.Projetos.Interfaces;
+
+type
+  iFactory = interface
+    ['{01A526EE-C22D-4734-92F4-9E2657092A63}']
+    function SQLGenerator : iSQLGenerator;
+    function ExecutaContador : iExecutaContador;
+    function Projetos : iProjetos;
+  end;
+
+  iFactory<T> = interface
+    ['{EF06E12D-3A65-4DCA-A8AA-5472F88E21BA}']
+    function Create : T;
+  end;
+
+implementation
+
+end.

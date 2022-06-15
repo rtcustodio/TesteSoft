@@ -1,0 +1,61 @@
+unit ProvaDelphiApp.MenuPrincipal;
+
+interface
+
+uses
+  ProvaDelphiApp.MenuPrincipal.Interfaces,
+  ufTarefa1,
+  uftarefa2,
+  ufTarefa3,
+  Vcl.Forms;
+
+type
+  TMenuPrincipal = class(TInterfacedObject, iMenuPrincipal)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iMenuPrincipal;
+    function AbrirTarefa1 : iMenuPrincipal;
+    function AbrirTarefa2 : iMenuPrincipal;
+    function Abrirtarefa3 : iMenuPrincipal;
+  end;
+
+implementation
+
+{ TMenuPrincipal }
+
+function TMenuPrincipal.AbrirTarefa1: iMenuPrincipal;
+var
+  fTarefa1: TfTarefa1;
+begin
+  Application.CreateForm(TfTarefa1, fTarefa1);
+end;
+
+function TMenuPrincipal.AbrirTarefa2: iMenuPrincipal;
+begin
+
+end;
+
+function TMenuPrincipal.Abrirtarefa3: iMenuPrincipal;
+begin
+
+end;
+
+constructor TMenuPrincipal.Create;
+begin
+
+end;
+
+destructor TMenuPrincipal.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TMenuPrincipal.New: iMenuPrincipal;
+begin
+  Result := Self.Create;
+end;
+
+end.

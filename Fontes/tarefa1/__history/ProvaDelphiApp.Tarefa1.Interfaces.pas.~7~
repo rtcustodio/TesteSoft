@@ -1,0 +1,25 @@
+unit ProvaDelphiApp.Tarefa1.Interfaces;
+
+interface
+
+uses
+  System.Classes;
+
+type
+  iGeraSQL = interface
+    ['{487C5AD4-9FD4-4DE8-8697-ED14884A41CB}']
+    function AddColuna(AValue : string) : iGeraSQL; overload;
+    function AddColuna(const AValue : TStrings) : iGeraSQL; overload;
+    function AddTabela(AValue : string) : iGeraSQL; overload;
+    function AddTabela(AValue : TStrings) : iGeraSQL; overload;
+    function AddCondicao(AValue : string) : iGeraSQL; overload;
+    function AddCondicao(AValue : TStrings) : iGeraSQL; overload;
+    function ClearColunas : iGeraSQL;
+    function ClearTabelas : iGeraSQL;
+    function ClearCondicoes : iGeraSQL;
+    function GetSQL : string;
+  end;
+
+implementation
+
+end.

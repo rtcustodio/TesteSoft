@@ -1,0 +1,79 @@
+unit ProvaDelphiApp.Contador;
+
+interface
+
+uses
+  ProvaDelphiApp.Interfaces, Vcl.ComCtrls;
+
+type
+  TContador = class(TInterfacedObject, iParametrosContador)
+  private
+    [weak]
+    FParent : iExecutaContador;
+    FProgressBar : TProgressBar;
+    FIntervalo : integer;
+  public
+    constructor Create(Parent : iExecutaContador);
+    destructor Destroy; override;
+    class function New(Parent : iExecutaContador) : iParametrosContador;
+    function SetProgressBar (AValue : TProgressBar) : iParametrosContador;
+    function GetProgressBar : TProgressBar;
+    function SetIntervalo (AValue : integer) : iParametrosContador;
+    function GetIntervalo : integer;
+    function &End : iExecutaContador;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TContador }
+
+function TContador.&End: iExecutaContador;
+begin
+  Result := FParent;
+end;
+
+function TContador.GetIntervalo: integer;
+begin
+  Result := FIntervalo;
+end;
+
+function TContador.GetProgressBar: TProgressBar;
+begin
+  if not Assigned(FProgressBar) then
+    raise Exception.Create('Nenhum ProgressBar foi atribuida');
+
+  Result := FProgressBar;
+end;
+
+constructor TContador.Create(Parent : iExecutaContador);
+begin
+  FParent := Parent;
+end;
+
+destructor TContador.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TContador.New(Parent : iExecutaContador) : iParametrosContador;
+begin
+  Result := Self.Create(Parent);
+end;
+
+function TContador.SetIntervalo(AValue: integer): iParametrosContador;
+begin
+  Result := Self;
+  FIntervalo := AValue;
+end;
+
+function TContador.SetProgressBar(AValue: TProgressBar): iParametrosContador;
+begin
+  Result := Self;
+  FProgressBar := AValue;
+end;
+
+end.

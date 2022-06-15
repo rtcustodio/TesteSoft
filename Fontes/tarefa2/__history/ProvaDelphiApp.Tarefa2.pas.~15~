@@ -1,0 +1,55 @@
+unit ProvaDelphiApp.Tarefa2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  System.threading;
+
+type
+  TfTarefa2 = class(TForm)
+    edtTempoThread1: TEdit;
+    edtTempoThread2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btnExecutaThread: TBitBtn;
+    pgBar1: TProgressBar;
+    pgBar2: TProgressBar;
+    Label3: TLabel;
+    Label4: TLabel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnExecutaThreadClick(Sender: TObject);
+  private
+    { Private declarations }
+
+    var
+
+
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+{ TfTarefa2 }
+
+uses uspUtils, ProvaDelphiApp.ExecutaContador;
+
+procedure TfTarefa2.btnExecutaThreadClick(Sender: TObject);
+begin
+  TExecutaContador
+    .New
+      .AddContador.SetProgressBar(pgBar1).SetIntervalo(StrToIntDef(edtTempoThread1.Text, 1000)).&End
+      .AddContador.SetProgressBar(pgBar2).SetIntervalo(StrToIntDef(edtTempoThread2.Text, 1000)).&End
+    .ExecuteAll;
+end;
+
+procedure TfTarefa2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FechaForm(Sender, Action);
+end;
+
+end.
